@@ -1,11 +1,11 @@
 function generatePassword() {
   var length = 8
-      charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-      passGen = "";
+      characterSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+      passwordGen = "";
   for (var i = 0; i < length; ++i) {
-    passGen += charSet.charAt(Math.floor(Math.random() * charSet.length));
+    passwordGen += characterSet.charAt(Math.floor(Math.random() * characterSet.length));
   }   
-  return passGen;
+  return passwordGen;
 }
 
 // Assignment Code
