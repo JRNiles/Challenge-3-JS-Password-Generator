@@ -1,3 +1,13 @@
+function generatePassword() {
+  var length = 8
+      charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+      passGen = "";
+  for (var i = 0; i < length; ++i) {
+    passGen += charSet.charAt(Math.floor(Math.random() * charSet.length));
+  }   
+  return passGen;
+}
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
