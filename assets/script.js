@@ -1,12 +1,19 @@
-function generatePassword() {
-  var length = 8
-      characterSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-      passwordGen = "";
-  for (var i = 0; i < length; ++i) {
-    passwordGen += characterSet.charAt(Math.floor(Math.random() * characterSet.length));
-  }   
-  return passwordGen;
+function randomLength(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
+var generatedLength = randomLength(8, 128)
+console.log(generatedLength)
+
+function generatePassword() {
+  var length = generatedLength
+      characterSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+      passwordGenerated = "";
+  for (var i = 0; i < length; ++i) {
+    passwordGenerated += characterSet.charAt(Math.floor(Math.random() * characterSet.length));
+  }   
+  return passwordGenerated;
+}
+
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -21,4 +28,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
